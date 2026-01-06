@@ -21,3 +21,8 @@ export default defineConfig(({ mode }) => {
       }
     };
 });
+
+export default defineConfig({
+  plugins: [react()],
+  base: '/-/', // 這裡填入你的倉庫名稱，前後都要有斜線。因為你的 Repo 叫「-」，所以填「/-/」
+})
