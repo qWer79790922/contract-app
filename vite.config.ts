@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/contract-app/', // 這裡保留你的倉庫路徑
+  base: '/contract-app/', // 確保這裡是你目前的倉庫名稱
 })
