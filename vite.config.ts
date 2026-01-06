@@ -1,28 +1,8 @@
-import path from 'path';
-import { defineConfig, loadEnv } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
-export default defineConfig(({ mode }) => {
-    const env = loadEnv(mode, '.', '');
-    return {
-      server: {
-        port: 3000,
-        host: '0.0.0.0',
-      },
-      plugins: [react()],
-      define: {
-        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
-      },
-      resolve: {
-        alias: {
-          '@': path.resolve(__dirname, '.'),
-        }
-      }
-    };
-});
-
+// 合併後的設定：只會有一個 export default
 export default defineConfig({
   plugins: [react()],
-  base: '/-/', // 這裡填入你的倉庫名稱，前後都要有斜線。因為你的 Repo 叫「-」，所以填「/-/」
+  base: '/-/', // 這裡保留你的倉庫路徑
 })
